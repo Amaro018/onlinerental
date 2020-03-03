@@ -14,9 +14,6 @@ $pending_shops_total = mysqli_num_rows($q);
 $q1 = $con->query("SELECT * FROM tbl_account WHERE status = 'pending' AND userType = 'user';");
 $pending_renter_total = mysqli_num_rows($q1);
 
-//query for top 10
-// $q2 = $con->query("SELECT tbl_shop.shop_no, tbl_shop.shop_name,tbl_shop.status, tbl_shop_followers.shop_no FROM tbl_shop INNER JOIN tbl_shop_followers ON tbl_shop.shop_no = tbl_shop_followers.shop_no AND status = '1';");
-// $r = mysqli_num_rows($q2);
 
 $output .= '
 	<div onclick="closeNav()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
