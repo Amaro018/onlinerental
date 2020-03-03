@@ -1,0 +1,56 @@
+#header{
+	background-color: #1c4c77;
+}
+.side-nav{
+	border-right: thick double #1d507c;
+}
+.side-nav nav ul li a{/*343a40*/
+	color: #1c4c77;
+}
+.side-nav nav ul li{
+	border-bottom: 0.7 solid #1c4c77;
+}
+
+
+
+
+
+
+#sidenav{
+	border-right: .7px solid rgb(29, 80, 124, 0.3);
+}
+#sidenav nav{
+	padding: 0px;
+	display: block;
+}
+#sidenav nav ul li > a{
+	border-bottom: .7px solid rgb(29, 80, 124, 0.3);
+	border-top: .7px solid rgb(29, 80, 124, 0.3);
+	color: #6c757d;
+	padding-left: 2rem;
+	padding-top: 1rem;
+	padding-bottom: 1rem; 
+}
+#sidenav nav ul li a:hover{
+	border: 0.3px solid white;
+	background-color: #1c4c77;
+	color: white;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#sidenav nav ul li a:hover i{
+	color: white;
+}
+#sidenav nav ul li .dropdown-menu{
+	margin-right: 1rem;
+	margin-left: 1rem;
+	border: none;
+}
+#sidenav nav ul li .dropdown-menu a{
+	border: 1px solid #ddd;
+	color: #6c757d;
+	padding-top: 1rem;
+	padding-bottom: 1rem; 
+}
+#sidenav nav ul li .dropdown-menu a:hover{
+	color: white;
+}

@@ -1,0 +1,58 @@
+/*admin-dashboard-body*/
+ #sample
+{
+	background-color: white;
+	/*padding-top:5%;
+	padding-bottom:5%;
+	opacity: 0.9;*/
+}
+/*dashboard*/
+.adminDB
+{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	/*background-color: #AD5D5D;*/
+}
+/*sidenav*/
+.sNav
+{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	background: linear-gradient(to top, rgba(173,93,93,0), rgba(173,93,93,1));
+	min-height: 100%;
+}
+.sNav ul li a
+{
+	/*color: white;*/
+}
+.sNav ul li a:hover
+{
+	/*background-color: #562e2e ;*/
+}
+/*dashboard-body*/
+.customDiv
+{
+	box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	margin-top: 8px;
+	margin-bottom: 8px;	
+	min-height: 90%; 
+}
+.ssNav
+{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	/*background: linear-gradient(to top, rgba(173,93,93,0), rgba(173,93,93,1));*/
+	min-height: 100%;
+}
+.ssNav nav ul li a
+{
+	color: #eedddd;
+}
+.ssNav nav ul li a:hover
+{
+	color: white ;
+}
+.dropdown-menu a:hover
+{
+	background-color: #ad5d5d;
+}
+

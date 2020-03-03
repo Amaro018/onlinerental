@@ -1,0 +1,77 @@
+.text-orange{
+	color: #fd7e14;
+}
+.bg-orange{
+	background-color: #fd7e14;
+}
+.text-orange:hover{
+	color: #fd7e14;
+	text-shadow: 0px 0px 1px #fd7e14;
+}
+.btn-outline-orange {
+  color: #fd7e14;
+  background-color: transparent;
+  background-image: none;
+  border-color: #fd7e14;
+}
+
+.btn-outline-orange:hover {
+  color: #fff;
+  background-color: #fd7e14;
+  border-color: #fd7e14;
+}
+
+.btn-outline-orange:focus, .btn-outline-orange.focus {
+  box-shadow: 0 0 0 0.2rem rgba(253, 126, 20, 0.5);
+}
+
+
+
+.border-l-none{
+	border-left: none;
+}
+.border-r-none{
+	border-right: none;
+}
+.remove-none{
+	appearance:none; 
+	outline:0; 
+	box-shadow: none; 
+}
+/*for cart*/
+/*#cart thead th {
+	border: none;
+}
+#cart td, #cart .table th{
+    border: none;
+    vertical-align: middle;
+    color: #6c757d;
+}
+#cart{ 
+	border-radius: 1.5rem;
+}
+#cart thead th{
+ 	padding: 1.5rem 0;
+}
+#cart tbody td{
+ 	padding: 1rem 0;
+}*/
+/*side nav*/
+/*#side_nav, #side_nav nav{
+	padding: 0;
+}
+#side_nav nav ul li{
+	text-indent: 1.5rem;
+	border-bottom: 1px solid #ddd;
+}
+#side_nav nav ul li a{
+	padding: 1rem 0;
+}
+#side_nav nav ul li a i{
+	margin-right: .5rem;
+}
+#side_nav nav ul li a:hover{
+	background-color: #343a40;
+	color: white;
+}*/
+

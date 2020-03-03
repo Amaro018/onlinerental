@@ -1,0 +1,69 @@
+/*header*/
+#fRow
+{
+	background-color: #AD5D5D;
+}
+#sRow
+{
+	background-color: #b26666;
+}
+#tRow
+{
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	background-color: white;
+}
+#tRow ul li a
+{
+	color: black;
+}
+#fRow ul li a, #sRow ul li a, #ftr ul li a
+{
+	color: #ddbbbb; 
+}
+#fRow ul li a:hover, #sRow ul li a:hover
+{
+	color:#eedddd; 
+}
+#tRow ul li a:hover
+{
+	color: white; /*ad855c*/
+	background-color: #b26666; /*ffeeff 562e2e*/
+}
+#sRow li div:last-child a
+{
+	color:black;
+}
+#sRow li div
+{
+}
+#sRow li div:last-child a:hover
+{
+	background-color: #AD5D5D;
+	color:white;
+}
+
+/*body*/
+#indexBody
+{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: white;
+	/*opacity: 0.9;*/
+	/*background:rgba(255,255,255,0.9);*/
+}
+#iBody/*manage_acc.php*/
+{
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background:rgba(255,255,255,0.9);
+}
+#indexBody .mpImage .row .col-md-2
+{
+	margin-top: 20px;
+}
+/*FOOTER*/
+#ftr
+{
+	background-color: #AD5D5D ;
+}
+

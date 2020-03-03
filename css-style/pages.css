@@ -1,0 +1,10 @@
+#side_chat_list li:hover{
+	/*background-color:  rgba(253, 126, 20, 0.8);*/
+	background-color:  rgba(9, 15, 126, 0.8);
+	/*background-color:  rgba(255, 255, 255, 0.8);*/
+}
+#side_chat_list li:hover label, #side_chat_list li:hover #side_name, #side_chat_list li:hover #last_msg{
+	color: white;
+}
+
+/*#090f7e*/
