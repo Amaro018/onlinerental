@@ -1,5 +1,5 @@
 <?php 
-
+echo "<h1>HELLO WORLD</h1>";
 include 'function/connection.php';
 session_start();
 if(!empty($_SESSION)){
