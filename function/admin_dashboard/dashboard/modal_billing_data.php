@@ -12,7 +12,7 @@ $shop_name = $r['shop_name'];
 $shop_desc = $r['shop_desc'];
 
 //get shops transactions
-$q1 = $con->query("SELECT a.`transaction_no`,a.`rent_date`,d.`fname`,d.`mname`,d.`lname`,d.`suffix`,b.`item_name`,c.`payment_status`,SUM(c.`amount`) AS `amount` FROM `tbl_transaction_log` AS a,`tbl_item` AS b,`tbl_payments` AS c,`tbl_indreg` AS d WHERE a.`shop_no`='$shop_no' AND a.`item_no`=b.`item_no` AND a.`transaction_no`=c.`tid` AND a.`accNo`=d.`accNo`;");
+$q1 = $con->query("SELECT a.`transaction_no`,a.`rent_date`,d.`fname`,d.`mname`,d.`lname`,d.`suffix`,b.`item_name`,c.`payment_status`,SUM(c.`amount`) AS `amount` FROM `tbl_transaction_log` AS a,`tbl_item` AS b,`tbl_payments` AS c,`tbl_indreg` AS d, `tbl_shop` AS e WHERE e.`shop_no`='$shop_no' AND a.`item_no`=b.`item_no` AND a.`transaction_no`=c.`tid` AND a.`accNo`=d.`accNo`;");
 $cnt = mysqli_num_rows($q1);
 $r1 = mysqli_fetch_assoc($q1);
 for($x=0;$x<$cnt;$x++) {
@@ -66,9 +66,12 @@ $output .= "
 <div id='tab2'>
     <table class='table table-bordered table-striped' id='shops_transactions_table'>
         <thead>
-            <th>Month</th>
+            <th>Transaction No</th>
             <th>Amount</th>
             <th>Status</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th>Amount</th>
         </thead>
         <tbody>
         $str

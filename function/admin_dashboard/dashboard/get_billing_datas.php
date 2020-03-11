@@ -7,11 +7,11 @@ $date = $_POST['date'];
 $percentage = 0.10;
 
 //get total transactions
-$q = $con->query("SELECT SUM((a.`rent_quantity`*b.`price`)*$percentage) AS `amount_due` FROM `tbl_transaction_log` AS a,`tbl_item_size` AS b WHERE a.`shop_no`='$shop_no' AND DATE_FORMAT(a.`rent_date`,'%Y-%m')='$date' AND a.`item_no`=b.`item_no` AND a.`rent_color`=b.`color` AND a.`rent_size`=b.`size`;");
+$q = $con->query("SELECT SUM((a.`rent_quantity`*b.`price`)*$percentage) AS `amount_due` FROM `tbl_transaction_log` AS a,`tbl_item_size` AS b, `tbl_shop` AS c WHERE c.`shop_no`='$shop_no' AND DATE_FORMAT(a.`rent_date`,'%Y-%m')='$date' AND a.`item_no`=b.`item_no` AND a.`rent_color`=b.`color` AND a.`rent_size`=b.`size`;");
 $r = mysqli_fetch_array($q);
 $amount_due = $r['amount_due'];
 
-$q1 = $con->query("SELECT `transaction_no` FROM `tbl_transaction_log` WHERE `shop_no`='$shop_no' AND DATE_FORMAT(`rent_date`,'%Y-%m')='$date'");
+$q1 = $con->query("SELECT a.`transaction_no` FROM `tbl_transaction_log` AS a, `tbl_shop` AS b WHERE b.`shop_no`='$shop_no' AND DATE_FORMAT(a.`rent_date`,'%Y-%m')='$date'");
 $cnt = mysqli_num_rows($q1);
 
 //get total_payment
