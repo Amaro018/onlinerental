@@ -342,3 +342,61 @@ function save_payment() {
 		}
 	})
 }
+
+/* payment setup */
+
+function payment_setup() {
+	$.ajax({
+		method: 'post',
+		url: 'function/admin_dashboard/dashboard/admin_manage_billing_payment_setup.php',
+		success: function (res) {
+			$('#admin_dashboard').html(res);
+			get_payment_data();
+		}
+	});
+}
+
+function save_payment_setup() {
+	Swal.fire({
+		title: 'Are you sure?',
+		text: "Payment will be saved",
+		icon: 'warning',
+		showCancelButton: true,
+		confirmButtonColor: '#3085d6',
+		cancelButtonColor: '#d33',
+		confirmButtonText: 'Yes'
+	}).then((result) => {
+		if (result.value) {
+			var payment = $('#payment_used_input').val();
+			$.ajax({
+				method: 'post',
+				url: 'function/admin_dashboard/dashboard/admin_manage_billing_payment_setup_save.php',
+				data: {
+					payment: payment
+				},
+				success: function (data) {
+					n = JSON.parse(data);
+					$('#payment_used_input').val("");
+					get_payment_data();
+					Swal.fire(
+						'Done!',
+						'Payment saved!',
+						'success'
+					)
+				}
+			});
+		}
+	})
+}
+
+function get_payment_data() {
+	$.ajax({
+		method: 'post',
+		url: 'function/admin_dashboard/dashboard/admin_manage_billing_payment_setup_data.php',
+		success: function (data) {
+			n = JSON.parse(data);
+			$('#payment_used_text').text(n);
+			$('#payment_used_input').val(n);
+		}
+	});
+}
