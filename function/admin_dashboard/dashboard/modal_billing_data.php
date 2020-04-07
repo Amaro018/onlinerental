@@ -84,21 +84,21 @@ $output .= "
 
 <div id='tab1'>
    <div class='row' align='left'>
-    <div class='col-sm-6'>
-        <label for='pay_date_billing'><b>Payment for the month of </b></label>
-        <input type='month' onchange='get_billing_datas();' class='form-control' name='pay_date_billing' id='pay_date_billing' value='$date_a'/>
+    <div class='col-sm-8'>
+        <div class='row'>
+            <div class='col-sm-6'>
+                <label for='pay_date_billing_from'><b>Date from</b></label>
+                <input type='month' onchange='get_billing_datas();' class='form-control' name='pay_date_billing_from' id='pay_date_billing_from' value='$date_a'/>
+            </div>
+            <div class='col-sm-6'>
+                <label for='pay_date_billing_to'><b>Date to</b></label>
+                <input type='month' onchange='get_billing_datas();' class='form-control' name='pay_date_billing_to' id='pay_date_billing_to' value='$date_a'/>
+            </div>
+        </div>
     </div>
-    <div class='col-sm-6'>
-        <label><b>Total transactions for selected month </b></label>
-        <input type='text' id='total_transactions_count' readonly class='form-control'/>
-    </div>
-   </div>
-   <hr/>
-
-   <div class='row'>
-    <div class='col-sm-12'>
-        <h5>Amount Due: &#8369;&nbsp;<span id='amount_due_text'></span></h5>
-        <input type='hidden' id='original_due'/>
+    <div class='col-sm-4'>
+        <label><b>Total amount </b></label>
+        <input type='text' id='total_amount' readonly class='form-control' placeholder='0.00'/>
     </div>
    </div>
    <hr/>

@@ -52,7 +52,8 @@ $output .= '
 				<a href="#" class=" nav-link dropdown-toggle" data-toggle="dropdown"><i class="fa fa-file-invoice""></i> Billing</a>
 				<div class="dropdown-menu border border-0 p-0 m-0" style="background-color: rgba(0, 123, 255, 0.1) ">
 					<a class="dropdown-item" href="#" onclick="billing();"> Billing <i class="fa fa-file-invoice""></i></a>
-		      		<a class="dropdown-item" href="#" onclick="payment_setup();"> Payment Setup <i class="fas fa-money-bill"></i></a>
+					  <a class="dropdown-item" href="#" onclick="payment_setup();"> Payment Setup <i class="fas fa-money-bill"></i></a>
+					  <a class="dropdown-item" href="#" onclick="shop_setup();"> Shop Setup <i class="fas fa-store"></i></a>
 		    	</div>
 			</li>
 

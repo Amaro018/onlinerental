@@ -279,25 +279,25 @@ function SYS_tab(x) {
 }
 
 function get_billing_datas() {
-	var shop_no = $('#shop_no_hdn').val();
-	var date = $('#pay_date_billing').val();
-	$.ajax({
-		method: 'post',
-		url: 'function/admin_dashboard/dashboard/get_billing_datas.php',
-		data: {
-			shop_no: shop_no,
-			date: date
-		},
-		success: function (data) {
-			n = JSON.parse(data);
-			var amount_due = n.amount_due;
-			var amount_due_o = n.amount_due_o;
-			var total_count = n.total_count;
-			$('#total_transactions_count').val(total_count);
-			$('#amount_due_text').text(amount_due);
-			$('#original_due').val(amount_due_o);
-		}
-	});
+	// var shop_no = $('#shop_no_hdn').val();
+	// var date = $('#pay_date_billing').val();
+	// $.ajax({
+	// 	method: 'post',
+	// 	url: 'function/admin_dashboard/dashboard/get_billing_datas.php',
+	// 	data: {
+	// 		shop_no: shop_no,
+	// 		date: date
+	// 	},
+	// 	success: function (data) {
+	// 		n = JSON.parse(data);
+	// 		var amount_due = n.amount_due;
+	// 		var amount_due_o = n.amount_due_o;
+	// 		var total_count = n.total_count;
+	// 		$('#total_transactions_count').val(total_count);
+	// 		$('#amount_due_text').text(amount_due);
+	// 		$('#original_due').val(amount_due_o);
+	// 	}
+	// });
 }
 
 function save_payment() {
@@ -399,4 +399,82 @@ function get_payment_data() {
 			$('#payment_used_input').val(n);
 		}
 	});
+}
+
+/* shop setup */
+
+function shop_setup() {
+	$.ajax({
+		method: 'post',
+		url: 'function/admin_dashboard/dashboard/admin_manage_billing_shop_setup.php',
+		success: function (res) {
+			$('#admin_dashboard').html(res);
+		}
+	});
+}
+
+function shop_setup_edit(x) {
+	$('#modal_cont').remove();
+	var modal = "<div id='modal_cont'></div>";
+	$('#billing_data').append(modal);
+	var shop_no = $('#hdn_shop_no' + x).val();
+	var shop_name = $('#hdn_shop_name' + x).text();
+	var date = $('#hdn_date' + x).val();
+	var accNo = $('#hdn_accNo' + x).val();
+	var status = $('#hdn_status' + x).val();
+	$.ajax({
+		method: 'post',
+		url: 'function/admin_dashboard/dashboard/modal_billing_shop_setup_data.php',
+		data: {
+			shop_no: shop_no,
+			shop_name: shop_name,
+			date: date,
+			accNo: accNo,
+			status: status
+		},
+		success: function (data) {
+			$('#modalBilling').modal();
+			$('#modal_cont').append(data);
+		}
+	});
+}
+
+function save_shop_approve() {
+	Swal.fire({
+		title: 'Are you sure?',
+		text: "Date will be saved",
+		icon: 'warning',
+		showCancelButton: true,
+		confirmButtonColor: '#3085d6',
+		cancelButtonColor: '#d33',
+		confirmButtonText: 'Yes'
+	}).then((result) => {
+		if (result.value) {
+			var shop_no = $('#shop_no_setup').val();
+			var date = $('#shop_setup_date_saved').val();
+			var accNo = $('#accNo_setup').val();
+			var deactivate = $('#deactivate').is(":checked");
+			$.ajax({
+				method: 'post',
+				url: 'function/admin_dashboard/dashboard/modal_billing_shop_setup_data_save.php',
+				data: {
+					shop_no: shop_no,
+					date: date,
+					accNo: accNo,
+					deactivate: deactivate
+				},
+				success: function (data) {
+					n = JSON.parse(data);
+					console.log(n);
+					$('#modalBilling').modal('hide');
+					shop_setup();
+					Swal.fire(
+						'Done!',
+						'Date saved!',
+						'success'
+					)
+				}
+			});
+		}
+	})
 }
